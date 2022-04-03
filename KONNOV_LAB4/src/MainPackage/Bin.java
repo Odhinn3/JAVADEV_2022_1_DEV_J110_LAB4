@@ -1,67 +1,58 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package MainPackage;
 
 import java.util.Arrays;
 
-/**
- *
- * @author user
- */
 public class Bin implements Method {
-    int size = 1024;
-    int intArr[] = new int[size/32];
+    int size = 1024;//размер коллекции
+    boolean boolArr[] = new boolean[size];//нициализация массива коллекции булевских значений
 
-    public Bin() {
-        
-    }
-    @Override
+    //конструктор по умолчанию
+    public Bin() {}
+    
+    //реализация интерфейса Method в массиве логических значений
+    @Override//проверка элемента с заданным индексом
     public boolean getByInd(int ind){
-        int elemInd = ind/32;
-        int bitInd = ind%32;
-        int elem = intArr[elemInd];
-        int mask = 1 << bitInd;
-        return (elem & mask) == mask;
+        return boolArr[ind];
     }
     
-    @Override    
+    @Override//установка в true элемента с заданным индексом
+    public void setTrue (int ind){
+        boolArr[ind] = true;
+    }
+    
+    @Override//установка в заданное значение элемента с заданным индексом
+    public void setByInd(int ind, boolean val){
+        boolArr[ind] = val;
+    }
+    
+    @Override//установка в false элемента с заданным индексом
+    public void setFalse(int ind){
+        boolArr[ind] = false;
+    }
+    
+    @Override//инвертирование элемента с заданным индексом
     public void invert (int ind){
-        int elemInd = ind/32;
-        int bitInd = ind%32;
-        int elem = intArr[elemInd];
-        int mask = 1 << bitInd;
-        intArr[elemInd] = elem ^ mask;
+        boolArr[ind] =! boolArr[ind];
     }    
     
-    @Override
-    public void setTrue (int ind){
-        int elemInd = ind/32;
-        int bitInd = ind%32;
-        int elem = intArr[elemInd];
-        int mask = 1 << bitInd;
-        intArr[elemInd] = elem | mask;
+    @Override//количество элементов true
+    public int trueCount(){
+        int count = 0;
+        for (int i = 0; i<boolArr.length; i++)
+            if (getByInd(i))
+                ++count;
+        return count;
     }
     
-    @Override
-    public void setFalse(int ind){
-        int elemInd = ind/32;
-        int bitInd = ind%32;
-        int elem = intArr[elemInd];
-        int mask = 1 << bitInd;
-        intArr[elemInd] = elem & mask;
-    }
-    
-    @Override
+    @Override//приведение массива к строке нулей и единиц
     public String arrToString(){
-        String strArr[] = new String[intArr.length];
-        for (int i = 0; i<intArr.length; i++)
+        String strArr[] = new String[boolArr.length];
+        for (int i = 0; i<boolArr.length; i++)
             if (getByInd(i))
                 strArr[i] = "1";
             else
                 strArr[i] = "0";
         return Arrays.toString(strArr);
-        
-    }
+    }    
 }
