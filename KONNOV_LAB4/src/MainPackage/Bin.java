@@ -3,6 +3,10 @@ package MainPackage;
 
 import java.util.Arrays;
 
+/**
+ *
+ * @author Odhinn3
+ */
 public class Bin implements Method {
     int size = 1024;//размер коллекции
     boolean boolArr[] = new boolean[size];//нициализация массива коллекции булевских значений

@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author user
+ * @author Odhinn3
  */
 public class Dec implements Method {
     int size = 1024;//размер коллекции

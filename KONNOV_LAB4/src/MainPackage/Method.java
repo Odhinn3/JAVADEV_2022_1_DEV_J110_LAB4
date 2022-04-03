@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package MainPackage;
+/**
+ *
+ * @author Odhinn3
+ */
 
 public interface Method {
     boolean getByInd(int ind);//проверка элемента с заданным индексом

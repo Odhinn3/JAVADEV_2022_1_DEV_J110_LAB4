@@ -7,7 +7,7 @@ package MainPackage;
 
 /**
  *
- * @author user
+ * @author Odhinn3
  */
 public class MainClass {
     
