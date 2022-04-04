@@ -1,16 +1,10 @@
 package MainPackage;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-
 /**
  *
  * @author Odhinn3
  */
 public class MainClass {
-    
 
     /**
      * @param args the command line arguments
@@ -18,17 +12,17 @@ public class MainClass {
     public static void main(String[] args) {
 
         Dec dec = new Dec();//устанавливаем ссылку на объекты класса Dec
-        Bin bin = new Bin();//устанавливаем ссылку на объекты класса Bin
+        Bin bin = new Bin(9);//устанавливаем ссылку на объекты класса Bin
         
         System.out.println("START APP\r\n=============");
         
         //проверяем реализацию в классе Bin
         System.out.println("Реализация интерфейса в массиве логических значений");
-        bin.setTrue(4);
-        System.out.println("bin.setTrue 4 = " + bin.getByInd(4));
+        bin.setTrue(bin.getInd());
+        System.out.println("bin.setTrue " + bin.getInd() + " = " + bin.getByInd(bin.getInd()));
         
-        bin.setByInd(3, true);
-        System.out.println("bin.setByInd 3 = " + bin.getByInd(3));
+        bin.setByInd(bin.getInd(), true);
+        System.out.println("bin.setByInd " + bin.getInd() + " = " + bin.getByInd(bin.getInd()));
         
         bin.setByInd(3, false);
         System.out.println("bin.setByInd 3 = " + bin.getByInd(3));
@@ -39,7 +33,7 @@ public class MainClass {
         bin.setFalse(2);
         System.out.println("bin.setFalse 2 = " + bin.getByInd(2));
         System.out.println("bin.trueCount = " + bin.trueCount());
-        System.out.println("decArr: " + bin.arrToString());
+        System.out.println("binArr: " + bin.arrToString());
         
         System.out.println("=============");
         
