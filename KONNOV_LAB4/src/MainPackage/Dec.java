@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package MainPackage;
 
 import java.util.Arrays;
@@ -11,8 +7,8 @@ import java.util.Arrays;
  * @author Odhinn3
  */
 public class Dec implements Method {
-    int size = 1024;//размер коллекции
-    int intArr[] = new int[size/32];//размер массива целочисленных значений
+    private int size = 1024;//размер коллекции
+    private int intArr[] = new int[size/32];//размер массива целочисленных значений
 
     //конструктор по умолчанию
     public Dec() {}

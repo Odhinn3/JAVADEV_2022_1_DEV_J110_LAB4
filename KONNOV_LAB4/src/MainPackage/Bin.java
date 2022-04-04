@@ -1,4 +1,3 @@
-
 package MainPackage;
 
 import java.util.Arrays;
@@ -8,12 +7,29 @@ import java.util.Arrays;
  * @author Odhinn3
  */
 public class Bin implements Method {
-    int size = 1024;//размер коллекции
-    boolean boolArr[] = new boolean[size];//нициализация массива коллекции булевских значений
+    private int ind;
+    private int size = 1024;//размер коллекции
+    private boolean boolArr[] = new boolean[size];//нициализация массива коллекции булевских значений
 
-    //конструктор по умолчанию
+    //конструкторы
     public Bin() {}
-    
+
+    public Bin(int ind) {
+        setInd(ind);
+    }
+
+    //геттер и сеттер индекса для реализации его проверки
+    public int getInd() {
+        return ind;
+    }
+
+    public void setInd(int ind) {
+        if (ind < 0){
+            throw new IllegalArgumentException("Индекс меньше нуля");
+            }
+        this.ind = ind;
+    }
+  
     //реализация интерфейса Method в массиве логических значений
     @Override//проверка элемента с заданным индексом
     public boolean getByInd(int ind){
