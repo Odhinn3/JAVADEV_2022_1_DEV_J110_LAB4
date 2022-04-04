@@ -3,7 +3,6 @@ package MainPackage;
  *
  * @author Odhinn3
  */
-
 public interface Method {
     boolean getByInd(int ind);//проверка элемента с заданным индексом
     void setTrue (int ind);//установка в true элемента с заданным индексом
